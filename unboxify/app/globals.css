@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050507;
+  --background-secondary: #0b0c13;
+  --foreground: #f5f5f7;
+  --accent-primary: #6f7dff;
+  --accent-secondary: #9b67ff;
+  --glow: 0 0 28px rgba(123, 99, 255, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-unboxify-sans);
+  --font-display: var(--font-unboxify-display);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --shadow-glow: var(--glow);
+}
+
+body {
+  color: var(--foreground);
+  font-family: var(--font-unboxify-sans), system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(80, 64, 200, 0.2), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgba(114, 0, 222, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(0, 200, 255, 0.1), transparent 45%),
+    linear-gradient(135deg, var(--background) 0%, var(--background-secondary) 100%);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(110, 125, 255, 0.35);
+  color: var(--foreground);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glass-panel {
+  background: rgba(20, 20, 35, 0.65);
+  border: 1px solid rgba(160, 140, 255, 0.15);
+  backdrop-filter: blur(12px);
+}
+
+.glow-gradient {
+  background: radial-gradient(circle, rgba(111, 125, 255, 0.3), rgba(155, 103, 255, 0.05) 65%, transparent);
+}
+
+.parallax-layer {
+  will-change: transform;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #8da4ff 0%, #b37bff 50%, #70d7ff 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.button-glow {
+  box-shadow: 0 0 32px rgba(111, 125, 255, 0.35);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(140, 120, 255, 0.45);
+  border-radius: 9999px;
+}
